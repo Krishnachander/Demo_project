@@ -37,13 +37,7 @@ steps:
     pathToPublish: '$(build.artifactStagingDirectory)'
 
 - task: VSTest@1
-inputs:
 - script: echo Hello world 1
 
 - task: SonarQubePostTest@1
-inputs:
 - script: echo Hello world 2
-
-- task: VSTest@2
-inputs:
-- script: echo Hello world 3

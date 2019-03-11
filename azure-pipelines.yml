@@ -37,29 +37,13 @@ steps:
     pathToPublish: '$(build.artifactStagingDirectory)'
 
 - task: VSTest@1
-steps:
-- script: echo Hello world
+inputs:
+- script: echo Hello world 1
 
 - task: SonarQubePostTest@1
+inputs:
+- script: echo Hello world 2
 
 - task: VSTest@2
-
-jobs:
-- job: Test
-  timeoutInMinutes: 10
-  cancelTimeoutInMinutes: 2
-
-jobs:
-- job: Test
-  strategy:
-    maxParallel: 2
-    matrix: 
-      US_IE:
-        Location: US
-        Browser: IE
-      US_Chrome:
-        Location: US
-        Browser: Chrome
-      Europe_Chrome:
-        Location: Europe
-        Browser: Chrome
+inputs:
+- script: echo Hello world 3

@@ -17,4 +17,4 @@ steps:
     npm run build
   displayName: 'build successful'
     npm test
-  displayName: 'build & test successful'
+  displayName: 'Test Pass'

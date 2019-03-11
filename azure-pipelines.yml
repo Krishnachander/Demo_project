@@ -7,26 +7,23 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-# Publish Cobertura or JaCoCo code coverage results from a build
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'JaCoCo' 
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**/site/jacoco'
-    failIfCoverageEmpty: true
+- task: 
+  displayName: 'Build'
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.war'
-    targetFolder: '$(build.artifactStagingDirectory)'
+- task: 
+  displayName: 'Code Analysis'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    artifactName: 'war'
-    pathToPublish: '$(build.artifactStagingDirectory)'
+- task: 
+  displayName: 'Unit Test'
 
-- task: VSTest@1
-- script: echo Hello world 1
+- task: 
+  displayName: 'Security Scan'
 
-- task: SonarQubePostTest@1
-- script: echo Hello world 2
+- task: 
+  displayName: 'Deploy to QA'
+
+- task: 
+  displayName: 'Run E2E Test'
+
+- task: 
+  displayName: 'Notify Users'

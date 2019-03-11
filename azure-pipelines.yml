@@ -35,3 +35,9 @@ steps:
   inputs:
     artifactName: 'war'
     pathToPublish: '$(build.artifactStagingDirectory)'
+
+- task: VSTest@1
+
+- task: SonarQubePostTest@1
+
+- task: VSTest@2

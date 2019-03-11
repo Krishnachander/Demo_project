@@ -7,23 +7,10 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: 
   displayName: 'Build'
-
-- task: 
   displayName: 'Code Analysis'
-
-- task: 
   displayName: 'Unit Test'
-
-- task: 
   displayName: 'Security Scan'
-
-- task: 
   displayName: 'Deploy to QA'
-
-- task: 
   displayName: 'Run E2E Test'
-
-- task: 
   displayName: 'Notify Users'

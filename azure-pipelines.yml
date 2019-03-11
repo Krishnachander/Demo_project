@@ -7,10 +7,11 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-displayName: 'Build'
-displayName: 'Code Analysis'
-displayName: 'Unit Test'
-displayName: 'Security Scan'
-displayName: 'Deploy to QA'
-displayName: 'Run E2E Test'
-displayName: 'Notify Users'
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+  displayName: 'Build'
+
+- script: 
+    npm install
+    npm run build

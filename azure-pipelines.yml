@@ -16,4 +16,4 @@ steps:
     npm install
     npm run build
     npm test
-  displayName: 'Build and Test success'
+  displayName: 'Build and Test success Iteration'
